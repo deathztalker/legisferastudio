@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legisfera | Estudio Jurídico | Atención Online</title>
+    <meta name="description" content="Legisfera: Atención online y representación jurídica en Chile. Rápido, claro y sin complicaciones. Agenda tu cita aquí.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-stars@2/tsparticles.preset.stars.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="#"><img src="logo.png" alt="Legisfera Logo" class="logo-img"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#agendar" class="btn-outline">Agendar Cita</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div id="tsparticles"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Representación Jurídica <br><span class="text-accent">Clara y Sin Complicaciones</span></h1>
+            <p>Atención online especializada en Chile (Maule). Protegemos tus intereses de forma rápida y efectiva.</p>
+            <div class="hero-buttons">
+                <a href="#agendar" class="btn btn-primary">Agenda Aquí <i class="fa-solid fa-calendar-check"></i></a>
+                <a href="#servicios" class="btn btn-secondary">Conocer Más</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-laptop-legal service-icon"></i>
+                    <h3>Atención Online</h3>
+                    <p>Asesoría legal a distancia, desde la comodidad de tu hogar, sin importar dónde te encuentres.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-scale-balanced service-icon"></i>
+                    <h3>Representación Jurídica</h3>
+                    <p>Defensa sólida y estrategia legal en tus litigios para asegurar los mejores resultados posibles.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-bolt service-icon"></i>
+                    <h3>Resolución Rápida</h3>
+                    <p>Trámites claros y sin complicaciones burocráticas. Vamos directo al punto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scheduling Section -->
+    <section id="agendar" class="schedule-section">
+        <div class="container">
+            <div class="schedule-container">
+                <div class="schedule-info">
+                    <h2>Agenda tu <span class="text-accent">Consulta</span></h2>
+                    <p>Selecciona la fecha y hora que más te acomode. Una vez agendado, nos pondremos en contacto contigo para los detalles de conexión.</p>
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> Chile - Región del Maule</li>
+                        <li><i class="fa-solid fa-envelope"></i> contacto@legisfera.cl</li>
+                    </ul>
+                </div>
+                
+                <div class="schedule-form-wrapper">
+                    <form id="appointment-form" class="appointment-form">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" required placeholder="Ej: Juan Pérez">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" required placeholder="tucorreo@ejemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono / WhatsApp</label>
+                            <input type="tel" id="phone" required placeholder="+56 9 1234 5678">
+                        </div>
+                        <div class="form-group">
+                            <label for="reason">Motivo de Consulta</label>
+                            <select id="reason" required>
+                                <option value="" disabled selected>Seleccione un motivo</option>
+                                <option value="asesoria">Asesoría General</option>
+                                <option value="representacion">Representación Legal</option>
+                                <option value="urgencia">Consulta de Urgencia</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Fecha</label>
+                                <input type="date" id="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Hora</label>
+                                <select id="time" required>
+                                    <option value="" disabled selected>Seleccione hora</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="17:00">05:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+                            Confirmar Cita <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <div id="form-message" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Legisfera Logo" class="logo-img-footer">
+                <p>Estudio Jurídico</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://instagram.com/legisfera.estudio" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Legisfera. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

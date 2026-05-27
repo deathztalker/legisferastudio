@@ -1,0 +1,20 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE Files
+.vscode/
+.idea/
+
+# Credenciales y archivos secretos (Por si en el futuro migras a un framework o añades un .env)
+.env
+.env.local
+.env.*.local
+
+# Node modules (Por si usas npm en el futuro)
+node_modules/
+
+# Build folders
+dist/
+build/
