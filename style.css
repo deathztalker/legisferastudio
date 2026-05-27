@@ -256,7 +256,7 @@ h1, h2, h3, h4 {
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
     line-height: 1.2;
     margin-bottom: 1rem;
     text-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -285,7 +285,7 @@ h1, h2, h3, h4 {
 .section-title {
     text-align: center;
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.5rem);
     margin-bottom: 1rem;
     color: var(--accent-gold);
 }
@@ -421,7 +421,7 @@ h1, h2, h3, h4 {
 
 .schedule-info h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.5rem);
     margin-bottom: 1.5rem;
 }
 
