@@ -1,38 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legisfera | Estudio Jurídico | Atención Online</title>
-    <meta name="description" content="Legisfera: Atención online y representación jurídica en Chile. Rápido, claro y sin complicaciones. Agenda tu cita aquí.">
+    <meta name="description"
+        content="Legisfera: Atención online y representación jurídica en Chile. Rápido, claro y sin complicaciones. Agenda tu cita aquí.">
     
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:title" content="Legisfera | Estudio Jurídico">
+    <meta property="og:description" content="Atención online y representación jurídica en Chile. Rápido, claro y sin complicaciones.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/TU_USUARIO/TU_REPOSITORIO/main/logo.png">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" href="logo.png">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Supabase JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Particles JS -->
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-stars@2/tsparticles.preset.stars.bundle.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/tsparticles-preset-stars@2/tsparticles.preset.stars.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-    
+
+    <!-- Flatpickr for elegant DateTime picking -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
+
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <a href="#"><img src="logo.png" alt="Legisfera Logo" class="logo-img"></a>
+                <a href="#"><img src="logo.png?v=5" alt="Legisfera Logo" class="logo-img"></a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#agendar" class="btn-outline">Agendar Cita</a></li>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#areas" class="nav-link">Áreas de Práctica</a></li>
+                <li><a href="#agendar" class="btn-outline nav-link">Agendar Cita</a></li>
             </ul>
         </div>
     </nav>
@@ -41,9 +62,9 @@
     <header class="hero">
         <div id="tsparticles"></div>
         <div class="hero-overlay"></div>
-        <div class="container hero-content">
+        <div class="container hero-content reveal">
             <h1>Representación Jurídica <br><span class="text-accent">Clara y Sin Complicaciones</span></h1>
-            <p>Atención online especializada en Chile (Maule). Protegemos tus intereses de forma rápida y efectiva.</p>
+            <p>Atención online especializada en todo Chile. Protegemos tus intereses de forma rápida y efectiva.</p>
             <div class="hero-buttons">
                 <a href="#agendar" class="btn btn-primary">Agenda Aquí <i class="fa-solid fa-calendar-check"></i></a>
                 <a href="#servicios" class="btn btn-secondary">Conocer Más</a>
@@ -54,22 +75,57 @@
     <!-- Services Section -->
     <section id="servicios" class="services">
         <div class="container">
-            <h2 class="section-title">Nuestros Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fa-solid fa-laptop-legal service-icon"></i>
-                    <h3>Atención Online</h3>
-                    <p>Asesoría legal a distancia, desde la comodidad de tu hogar, sin importar dónde te encuentres.</p>
+            <h2 class="section-title reveal">Nuestros <span class="text-accent">Pilares</span></h2>
+            <div class="services-grid reveal">
+                <div class="service-card glass-card">
+                    <i class="fa-solid fa-laptop service-icon"></i>
+                    <h3>Atención Online Nacional</h3>
+                    <p>Asesoría legal a distancia mediante videollamada, sin importar en qué región de Chile te
+                        encuentres. Ahorra tiempo y traslados.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card glass-card">
                     <i class="fa-solid fa-scale-balanced service-icon"></i>
-                    <h3>Representación Jurídica</h3>
-                    <p>Defensa sólida y estrategia legal en tus litigios para asegurar los mejores resultados posibles.</p>
+                    <h3>Representación en Tribunales</h3>
+                    <p>Defensa sólida ante Juzgados Civiles, de Familia y del Trabajo, con tramitación electrónica a
+                        través de la Oficina Judicial Virtual del Poder Judicial.</p>
                 </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-bolt service-icon"></i>
-                    <h3>Resolución Rápida</h3>
-                    <p>Trámites claros y sin complicaciones burocráticas. Vamos directo al punto.</p>
+                <div class="service-card glass-card">
+                    <i class="fa-solid fa-file-contract service-icon"></i>
+                    <h3>Asesoría Preventiva</h3>
+                    <p>Redacción y revisión de contratos, escrituras y acuerdos extrajudiciales para evitar conflictos
+                        legales futuros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Áreas de Práctica (Chilean Law Focus) -->
+    <section id="areas" class="practice-areas">
+        <div class="container">
+            <h2 class="section-title reveal">Áreas de <span class="text-accent">Práctica</span></h2>
+            <div class="areas-grid reveal">
+                <div class="area-item">
+                    <i class="fa-solid fa-users-rays"></i>
+                    <h4>Derecho de Familia</h4>
+                    <p>Divorcios, pensiones de alimentos, relación directa y regular (visitas), cuidado personal y
+                        medidas de protección.</p>
+                </div>
+                <div class="area-item">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <h4>Derecho Laboral</h4>
+                    <p>Despido injustificado, autodespido (despido indirecto), tutela laboral por vulneración de
+                        derechos y cobro de prestaciones.</p>
+                </div>
+                <div class="area-item">
+                    <i class="fa-solid fa-house-chimney-window"></i>
+                    <h4>Derecho Civil</h4>
+                    <p>Juicios de arrendamiento (Ley Devuélveme Mi Casa), indemnización de perjuicios, cobranza de
+                        pagarés y redacción de contratos.</p>
+                </div>
+                <div class="area-item">
+                    <i class="fa-solid fa-car-burst"></i>
+                    <h4>Juzgados de Policía Local</h4>
+                    <p>Choques y accidentes de tránsito, querellas infraccionales, y Ley del Consumidor (SERNAC).</p>
                 </div>
             </div>
         </div>
@@ -78,16 +134,17 @@
     <!-- Scheduling Section -->
     <section id="agendar" class="schedule-section">
         <div class="container">
-            <div class="schedule-container">
+            <div class="schedule-container reveal">
                 <div class="schedule-info">
                     <h2>Agenda tu <span class="text-accent">Consulta</span></h2>
-                    <p>Selecciona la fecha y hora que más te acomode. Una vez agendado, nos pondremos en contacto contigo para los detalles de conexión.</p>
+                    <p>Selecciona la fecha y hora que más te acomode. Una vez agendado, nos pondremos en contacto
+                        contigo para los detalles de conexión.</p>
                     <ul class="contact-list">
-                        <li><i class="fa-solid fa-location-dot"></i> Chile - Región del Maule</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Atención en todo Chile</li>
                         <li><i class="fa-solid fa-envelope"></i> contacto@legisfera.cl</li>
                     </ul>
                 </div>
-                
+
                 <div class="schedule-form-wrapper">
                     <form id="appointment-form" class="appointment-form">
                         <div class="form-group">
@@ -112,24 +169,17 @@
                                 <option value="otro">Otro</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="date">Fecha</label>
-                                <input type="date" id="date" required>
+                                <input type="text" id="date" class="flatpickr-date" required
+                                    placeholder="Selecciona una fecha">
                             </div>
                             <div class="form-group">
                                 <label for="time">Hora</label>
-                                <select id="time" required>
-                                    <option value="" disabled selected>Seleccione hora</option>
-                                    <option value="09:00">09:00 AM</option>
-                                    <option value="10:00">10:00 AM</option>
-                                    <option value="11:00">11:00 AM</option>
-                                    <option value="12:00">12:00 PM</option>
-                                    <option value="15:00">03:00 PM</option>
-                                    <option value="16:00">04:00 PM</option>
-                                    <option value="17:00">05:00 PM</option>
-                                </select>
+                                <input type="text" id="time" class="flatpickr-time" required
+                                    placeholder="Selecciona una hora">
                             </div>
                         </div>
 
@@ -143,22 +193,57 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Actualizado -->
     <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <img src="logo.png" alt="Legisfera Logo" class="logo-img-footer">
-                <p>Estudio Jurídico</p>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <img src="logo.png?v=5" alt="Legisfera Logo" class="logo-img-footer">
+                <p class="footer-desc">Estudio Jurídico chileno comprometido con la defensa de tus derechos. Atención
+                    online rápida, clara y sin complicaciones.</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/legisfera.estudio" target="_blank" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/56912345678" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
             </div>
-            <div class="footer-social">
-                <a href="https://instagram.com/legisfera.estudio" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+
+            <div class="footer-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#servicios">Nuestros Pilares</a></li>
+                    <li><a href="#areas">Áreas de Práctica</a></li>
+                    <li><a href="#agendar">Agendar Consulta</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> Atención en todo Chile</li>
+                    <li><a href="mailto:contacto@legisfera.cl" style="color: inherit; text-decoration: none;"><i class="fa-solid fa-envelope"></i> contacto@legisfera.cl</a></li>
+                    <li><a href="tel:+56912345678" style="color: inherit; text-decoration: none;"><i class="fa-solid fa-phone"></i> +56 9 1234 5678</a></li>
+                    <li><i class="fa-solid fa-clock"></i> Lunes a Viernes: 09:00 - 18:00 hrs</li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Legisfera. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Legisfera Estudio Jurídico. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/56912345678" class="whatsapp-float" target="_blank" aria-label="Contáctanos por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Botón Volver Arriba -->
+    <a href="#" class="back-to-top" id="back-to-top" aria-label="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
     <script src="app.js"></script>
 </body>
+
 </html>
